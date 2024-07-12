@@ -1,18 +1,39 @@
 
 import './App.css';
+import {User} from  './User';
 
 function App() {
-  const names = ["Pedro", "Jake", "Jessica", "Mike", "Dustin", "Lukas"];
+  const users = [
+    {name: "Pedro", age: 21},
+    {name: "Jake", age: 25},
+    {name: "jessica", age: 45},
+  ];
 
   return (
-    <div className="App"> 
-      {names.map((name, key) => {
-        return <h1 key = {key}> {name} </h1>;
-      })}
+    <div className="App">
+      {users.map((user, key) => {
+        return (
+          <User name = {user.name} age = {user.age} key = {key}/>
+        );
+      })} 
     </div>
   );
-
 }
+
+
+
+// function App() {
+//   const names = ["Pedro", "Jake", "Jessica", "Mike", "Dustin", "Lukas"];
+
+//   return (
+//     <div className="App"> 
+//       {names.map((name, key) => {
+//         return <h1 key = {key}> {name} </h1>;
+//       })}
+//     </div>
+//   );
+
+// }
 
 // function App() {
 //  const age = 17;
