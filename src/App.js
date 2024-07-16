@@ -1,19 +1,106 @@
 
 import './App.css';
 // import {User} from  './User';
-import { planets } from './planets';
+// import { planets } from './planets';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+  const decrease = () => {
+    setCount(count - 1);
+  };
+  const setToZero = () => {
+    setCount(0);
+  };
+
   return (
     <div className="App"> 
-     
-      {planets.map (
-        (planet, key) =>  planet.isGasPlanet && <h1 key = {key}> {planet.name} </h1> 
-      )}
-      
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
+      <button onClick={setToZero}>Set To Zero</button>
+      {count}
     </div>
   );
 }
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div className="App"> 
+//       <button onClick={() => {setCount(count + 1);}}> Increase </button>
+//       <button onClick={() => {setCount(count - 1);}}> Decrease </button>
+//       <button onClick={() => {setCount(0);}}> Set to Zero </button>
+//       {count}
+//     </div>
+//   );
+// }
+
+// function App() {
+//   // const [showText, setShowText] = useState(true);
+//   const [textColor, setTextColor] = useState("black");
+
+//   return (
+//     <div className="App"> 
+//       <button 
+//         onClick={() => { 
+//           // setShowText(!showText);
+//           setTextColor(textColor === "black" ? "red" : "black");
+//         }}
+//       > 
+//         Show/Hide 
+//       </button>
+//       {/* {showText && <h1> Hi my name is John </h1>} */}
+//       <h1 style={{ color: textColor }}> Hi my name is John </h1>
+//     </div>
+//   );
+// }
+
+// function App() {
+//   const [inputValue, setInputValue] = useState("");
+
+//   const handleInputChange = (event) => {
+//     setInputValue(event.target.value);
+//   }
+
+//   return (
+//     <div className="App"> 
+//       <input type='text' onChange={handleInputChange}></input>
+//       {inputValue}
+//     </div>
+//   );
+// }
+
+// function App() {
+//   const [age, setAge] = useState(0);
+
+//   const increaseAge = () => {
+//     setAge(age + 1);
+//   }
+
+//   return (
+//     <div className="App"> 
+//      {age} 
+//      <button onClick={increaseAge}> Increase Age </button>
+//     </div>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <div className="App"> 
+     
+//       {planets.map (
+//         (planet, key) =>  planet.isGasPlanet && <h1 key = {key}> {planet.name} </h1> 
+//       )}
+      
+//     </div>
+//   );
+// }
 
 // function App() {
 //   const users = [
